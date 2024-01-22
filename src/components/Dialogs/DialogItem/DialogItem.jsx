@@ -6,16 +6,12 @@ const DialogItem = (props) => {
     let path = '/dialogs/' + props.id
     return (
         <div className={s.dialogItem}>
-            <NavLink to={path}>{props.name}</NavLink>
+            <img className={s.dialogIcon} src={props.ava} alt=""/>
+            <div className={s.item}>
+                <NavLink to={path}>{props.name}</NavLink>
+            </div>
         </div>
     )
 }
-// const DialogItem = (props) => {
-//     return (
-//         <div className={s.dialogItem}>
-//             <NavLink to={props.id.toString()}>{props.name}</NavLink>
-//         </div>
-//     );
-// }
 
 export default DialogItem

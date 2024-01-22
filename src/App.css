@@ -4,15 +4,22 @@
     grid-template-areas:
     'h h'
     'n c';
-    grid-template-rows: 60px 1fr;
+    font-size: 1.3rem;
+    grid-template-rows: 90px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
+
 }
+
 
 .app-wrapper-content {
     grid-area: c;
     background-color: rgba(158, 103, 232, 0.51);
 
+
 }
 
-
+.box {
+    grid-area: n;
+    background-color:  #121012c7;
+}

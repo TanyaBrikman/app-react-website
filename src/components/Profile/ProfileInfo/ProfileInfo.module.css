@@ -1,6 +1,14 @@
-img {
-    width: 900px;
+.backgroundBlock img{
+    width: 190vh;
+
 }
+
+.avatarIcon img {
+    width: 200px;
+    border-radius: 100%;
+
+}
+
 .descriptionBlock {
     padding: 10px;
 }

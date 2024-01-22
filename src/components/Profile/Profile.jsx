@@ -1,15 +1,14 @@
 import React from "react"
-import MyPosts from "./My Posts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsContainer from "./My Posts/Post/MyPostsContainer";
 
 const Profile = (props) => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts posts={props.state.posts} />
+            <MyPostsContainer/>
         </div>
     )
-
 }
 
 export default Profile

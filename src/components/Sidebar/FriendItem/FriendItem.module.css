@@ -1,0 +1,26 @@
+.nav {
+    grid-area: s;
+    padding: 20px;
+
+}
+
+.friendItem {
+    margin-top: 10px;
+    padding: 5px;
+
+}
+
+.friendIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+a.activeLink {
+    color: gold;
+}
