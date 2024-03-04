@@ -1,13 +1,22 @@
 import React from "react"
 import Sidebar from "./Sidebar";
 import {connect} from "react-redux";
+import {setFavoritesFriendsAc} from "../../redux/sidebar-reducer";
 
 let mapStateToProps = (state) => {
     return {
-        sidebarPage: state.sidebarPage
+        friends: state.friendsPage.friends
     }
 }
 
-const SidebarContainer = connect(mapStateToProps)(Sidebar)
+let mapDispatchToProps = (dispatch) => {
+    return {
+        setFavoritesFriends: (friends) => {
+            dispatch(setFavoritesFriendsAc(friends))
+        }
+    }
+}
+
+const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(Sidebar)
 
 export default SidebarContainer

@@ -10,6 +10,7 @@ import Setting from "./components/Setting/Setting";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import SidebarContainer from "./components/Sidebar/SidebarContainer";
 import FriendsContainer from "./components/Sidebar/Friends/FriendsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 const App = (props) => {
 
@@ -26,6 +27,8 @@ const App = (props) => {
                            element={<Profile/>}/>
                     <Route path='/dialogs'
                            element={<DialogsContainer/>}/>
+                    <Route path='/users'
+                           element={<UsersContainer/>}/>
                     <Route path='/friends'
                            element={<FriendsContainer/>}/>
                     <Route path='/news'

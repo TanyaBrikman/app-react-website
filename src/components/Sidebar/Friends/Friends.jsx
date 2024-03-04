@@ -1,10 +1,10 @@
 import React from 'react'
 import s from "./Friends.module.css"
-import FriendItem from "../FriendItem/FriendItem";
+import FriendItem from "./FriendItem/FriendItem";
 
 const Friends = (props) => {
-    let state = props.sidebarPage
-    let friendsElement = state.friends.map(f => <FriendItem name={f.name} ava={f.ava} id={f.id}/>)
+
+    let friendsElement = props.friends.map(f => <FriendItem name={f.name} ava={f.ava} id={f.id}/>)
 
     return (
         <div className={s.friendItem}>
