@@ -1,3 +1,5 @@
+import {DialogsType, MessagesType} from "../types/types";
+
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY'
 const SEND_MESSAGE = 'SEND_MESSAGE'
 
@@ -23,17 +25,19 @@ let initialState = {
             ava: 'https://images.unsplash.com/photo-1583512603806-077998240c7a?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8',
             name: 'Vadim'
         },
-    ],
+    ] as Array<DialogsType>,
     messages: [
         {id: 1, message: 'Hi!'},
         {id: 2, message: 'How is your React?'},
         {id: 3, message: 'Hello'},
         {id: 4, message: ':)'},
-    ],
-    newMessageBody: '',
+    ] as Array<MessagesType>,
+    newMessageBody: '' as string,
 }
 
-const dialogsReducer = (state = initialState, action) => {
+export type InitialStateType = typeof initialState;
+
+const dialogsReducer = (state = initialState, action: any): InitialStateType => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
             return {
@@ -53,9 +57,18 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-export const sendMessageCreator = () =>
+type SendMessageActionCreator = {
+    type: typeof SEND_MESSAGE
+}
+
+type UpdateNewMessageBodyActionCreator = {
+    type: typeof UPDATE_NEW_MESSAGE_BODY
+    body: string
+}
+
+export const sendMessageCreator = (): SendMessageActionCreator =>
     ({type: SEND_MESSAGE})
-export const updateNewMessageBodyCreator = (body) =>
+export const updateNewMessageBodyCreator = (body: string): UpdateNewMessageBodyActionCreator =>
     ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
 
 export default dialogsReducer

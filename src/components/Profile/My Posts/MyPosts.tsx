@@ -1,8 +1,16 @@
 import React from "react"
 import s from "./MyPosts.module.css"
 import Post from "./Post/Post";
+import {PostType} from "../../../types/types";
 
-const MyPosts = (props) => {
+type PropsType = {
+    posts: Array<PostType>
+    newPostText: string;
+    addPost(): void;
+    updateNewPostText(text: string): void;
+}
+
+const MyPosts: React.FC<PropsType> = (props) => {
     let postsElement = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} key={p.id}/>)
     let newPostElement = React.createRef()
 

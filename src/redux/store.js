@@ -1,6 +1,8 @@
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import friendsReducer from "./friends-reducer";
+import {create} from "axios";
+import {configureStore} from "@reduxjs/toolkit";
 
 let store = {
     _state: {
@@ -146,4 +148,5 @@ let store = {
 }
 
 window.store = store
+
 export default store

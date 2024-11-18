@@ -2,8 +2,14 @@ import React from "react"
 import FriendItem from "./Friends/FriendItem/FriendItem";
 import s from "./Sidebar.module.css";
 import {NavLink} from "react-router-dom";
+import {FriendsType} from "../../types/types";
 
-const Sidebar = (props) => {
+type PropsType = {
+    friends: Array <FriendsType>
+
+}
+
+const Sidebar: React.FC<PropsType> = (props) => {
     // if (props.friends.length === 0) {
     //     props.setFavoritesFriends([
     //         {
@@ -36,7 +42,7 @@ const Sidebar = (props) => {
 
     let element = props.friends.map(f => <FriendItem name={f.name} ava={f.ava} key={f.id} id={f.id}/>)
 
-    let addFavoritesFriends = (friend) => {
+    let addFavoritesFriends = (friend: any) => {
         let arrFriendsFavorites = []
         for (let i = 0; i < 3; i++) {
             arrFriendsFavorites.push(friend[i])

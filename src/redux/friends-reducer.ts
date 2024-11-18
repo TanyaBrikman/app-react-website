@@ -1,3 +1,6 @@
+import {FriendsType} from "../types/types";
+
+
 let initialState = {
     friends: [
         {
@@ -25,10 +28,12 @@ let initialState = {
             ava: 'https://images.unsplash.com/photo-1598133893778-ed19656d6a4f?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             name: 'Maxim'
         }
-    ]
+    ] as Array<FriendsType>
 }
 
-const friendsReducer = (state = initialState, action) => {
+export type InitialStateType = typeof initialState
+
+const friendsReducer = (state = initialState, action: any): InitialStateType => {
      return state
 
 }

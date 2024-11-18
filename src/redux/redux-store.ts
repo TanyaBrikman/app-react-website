@@ -5,7 +5,7 @@ import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
 import friendsReducer from "./friends-reducer";
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     sidebarPage: sidebarReducer,
@@ -13,8 +13,19 @@ let reducers = combineReducers({
     usersPage: usersReducer
 })
 
+
+type RootReducerType = typeof rootReducer
+
+export type AppStoreType = ReturnType<RootReducerType>
+
+
+
 export let store = configureStore({
-   reducer: reducers
+   reducer: rootReducer
 })
+
+
+// @ts-ignore
+window.store = store
 
 export default store
